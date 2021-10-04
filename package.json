@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "got": "^11.8.2"
+  },
+  "name": "metofficeapi",
+  "version": "1.0.0",
+  "main": "MetOfficeAPI.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
