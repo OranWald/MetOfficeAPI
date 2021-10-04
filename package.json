@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "got": "^11.8.2"
+    "got": "^11.8.2",
+    "prompt-sync": "^4.2.0"
   },
   "name": "metofficeapi",
   "version": "1.0.0",
   "main": "MetOfficeAPI.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
