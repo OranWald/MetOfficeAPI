@@ -2,6 +2,7 @@ const got = require("got");
 
 const tempName = "Ardlui"
 
+const testId = "3068"
 
 async function index(){
     got.get(
@@ -12,16 +13,21 @@ async function index(){
     .then(function(body){
         let names = []
         for (let a of body.Locations.Location){
-            names.push(a) // pushes to empty array names
+            names.push(a) 
         }
         var foundLocation = body.Locations.Location.find((obj)=> {
-            if (obj.id==="3068") {
+            if (obj.id=== testId) {
                 return true;
                 }
             return false;
         }) ;
-        console.log(foundLocation);
-        return names;
+        return got.get(
+            "http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/" + testId + "?res=3hourly&key=06677d83-572f-4514-94c1-ef214268b6fd"
+        ).json();
+       
+    })
+    .then(function(newBody){
+        console.log(newBody.SiteRep.Wx.Param)
     })
 //     .then(function(names) {
 //         for (const a of names){
