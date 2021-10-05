@@ -14,13 +14,13 @@ async function index(){
         for (let a of body.Locations.Location){
             names.push(a) // pushes to empty array names
         }
-        var filteredArray = body.Locations.Location.filter((obj)=> {
+        var foundLocation = body.Locations.Location.find((obj)=> {
             if (obj.id==="3068") {
-                console.log(obj)
                 return true;
                 }
             return false;
-        })
+        }) ;
+        console.log(foundLocation);
         return names;
     })
 //     .then(function(names) {
