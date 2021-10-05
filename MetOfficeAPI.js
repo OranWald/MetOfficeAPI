@@ -1,26 +1,6 @@
 const got = require("got");
-class apiData{
-    constructor(Elevation,ID,latitude,longitude,name,region,unitaryAuthArea){
-        this.Elevation=Elevation
-        this.ID=ID
-        this.latitude=latitude
-        this.longitude=longitude
-        this.name=name
-        this.region=region
-        this.unitaryAuthArea=unitaryAuthArea
- }}
 
-function pushToClass(APIData){
-    for (let i = 0;i < 6002; i ++ ){
-        const APIData = new apiData(APPData[i])
-    return APIData
-
-
-    }
-}
-
-
-
+const tempName = "Ardlui"
 
 async function index(){
     got.get(
@@ -28,10 +8,22 @@ async function index(){
     )
     .json()
     .then(function(body){
-        pushToClass(body.Locations.Location)
-    // console.log(APIData)
-    console.log(APIData)
-    return
+        let names = []
+        for (let a of body.Locations.Location){
+            names.push(a) // pushes to empty array names
+        }
+        return names;
+
+    })
+    .then(function(names) {
+        for (const a of names){
+            //console.log(a["name"])
+            if (tempName.toLowerCase() === a["name"].toLowerCase()){
+                console.log(a)
+            }
+        }
     })
 }
+
+index()
 
