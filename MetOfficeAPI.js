@@ -29,6 +29,17 @@ async function index(){
     .then(function(newBody){
         console.log(newBody.SiteRep.Wx.Param)
     })
+
+
+
+
+
+
+
+
+
+
+    
 //     .then(function(names) {
 //         for (const a of names){
 //             //console.log(a["name"])
