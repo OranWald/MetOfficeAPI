@@ -1,9 +1,7 @@
 const express = require("express");
 const app = express();
 const got = require("got");
-
-const readline = require("readline");
-
+let testId =""
 
 app.get("/forecast/:userLocation", function (req, res) {
   got
@@ -17,12 +15,15 @@ app.get("/forecast/:userLocation", function (req, res) {
       for (let a of body.Locations.Location) {
         names.push(a);
       }
+      console.log(req.params.Location)
       for (let i = 0; i < names.length ; i++){
         if (names[i].names===req.params.Location) {
-          return true
+          testId=names[i].id 
+          return testId
         }
-        return false;
+        return console.error("bruh, right a proper name.");
       };
+      
       })
       return got
         .get(
