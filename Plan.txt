@@ -1,0 +1,4 @@
+1.takes the location name as a query parameter
+2.turn location name into location ID
+3.returns the forecast DV values an appropriate JSON object
+4.return a sensible error code in case you can't find any results
